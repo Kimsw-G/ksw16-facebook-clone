@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="basicLayout">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/user/login.css}">
+</th:block>
+
+<section layout:fragment="content">
+  <h1>login</h1>
+  <form th:action="@{join}" method="post" th:object="${userEntity}" >
+    <div><input type="email" th:field="*{email}" placeholder="email" autofocus></div>
+    <div><input type="password" th:field="*{pw}" placeholder="password" autofocus></div>
+    <div><input type="text" th:field="*{nm}" placeholder="name" autofocus></div>
+    <div><input type="tel" th:field="*{tel}" placeholder="tel" autofocus></div>
+    <div>
+      <input type="submit" value="submit">
+      <input type="reset" value="reset">
+    </div>
+  </form>
+</section>
+</html>
